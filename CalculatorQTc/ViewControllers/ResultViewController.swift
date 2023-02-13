@@ -90,6 +90,35 @@ class ResultViewController: UIViewController {
         rautaharjuStatusLabel.textColor = rautaharju.calculationStatusTextColor
         
         
+        
+//        MARK: bogossian
+        bogossianQRSLabel.text = "\(Int(round(bogossian.calculationResult)))"
+        bogossianQRSStatusLabel.text = bogossian.calculationStatus
+        bogossianQRSStatusLabel.backgroundColor = bogossian.calculationStatusColor
+        bogossianQRSStatusLabel.textColor = bogossian.calculationStatusTextColor
+
+
+
+//        MARK: rautaharjuQRS
+        rautaharjuQRSLabel.text = "\(Int(round(rautaharjuQRS.calculationResult)))"
+        rautaharjuQRSStatusLabel.text = rautaharjuQRS.calculationStatus
+        rautaharjuQRSStatusLabel.backgroundColor = rautaharjuQRS.calculationStatusColor
+        rautaharjuQRSStatusLabel.textColor = rautaharjuQRS.calculationStatusTextColor
+
+
+//        MARK: wang
+        wangQRSLabel.text = "\(Int(round(wang.calculationResult)))"
+        wangQRSStatusLabel.text = wang.calculationStatus
+        wangQRSStatusLabel.backgroundColor = wang.calculationStatusColor
+        wangQRSStatusLabel.textColor = wang.calculationStatusTextColor
+        
+//        MARK: qtc QRS
+        qtcQRSLabel.text = "\(Int(round(qtc.calculationResult)))"
+        qtcQRSStatusLabel.text = qtc.calculationStatus
+        qtcQRSStatusLabel.backgroundColor = qtc.calculationStatusColor
+        qtcQRSStatusLabel.textColor = qtc.calculationStatusTextColor
+        
+        
     }
     
     

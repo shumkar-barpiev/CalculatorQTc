@@ -47,7 +47,7 @@ class CalculatorViewController: UIViewController {
     var qrs = 0
     var RR = 0
     var speedEKG = 0.0
-    var k = 0
+    var k = 0.0
     var qrsController = false
     
     
@@ -195,15 +195,18 @@ class CalculatorViewController: UIViewController {
                             qrs = Int(qrsNumber)!
                         }
                         
-                        var tempQrsQt = Double(qrs*10) / speedEKG
+                        let tempQrsQt = Double(qrs*10) / speedEKG
                         
                         bogossian.calculationResult = QT - (0.48 * tempQrsQt)
-                        print("bogossian = \(bogossian.calculationResult)")
+//                        print("bogossian = \(bogossian.calculationResult)")
                         
                         
                         rautaharjuQRS.calculationResult = QT - 155.0 * (60.0 / Double(chss) - 1.0) - 0.93 * (tempQrsQt - 139.0) + k
-                        print("rautaharjuQRS = \(rautaharjuQRS.calculationResult)")
+//                        print("rautaharjuQRS = \(rautaharjuQRS.calculationResult)")
                         
+                        
+                        wang.calculationResult = QT - (0.86 * tempQrsQt - 71.0)
+//                        print("wang = \(wang.calculationResult)")
                         
                         
                     }else{
@@ -436,6 +439,13 @@ class CalculatorViewController: UIViewController {
                 vc.framingham = self.framingham
                 vc.hodges = self.hodges
                 vc.rautaharju = self.rautaharju
+            
+                if qrsController{
+                    vc.bogossian = self.bogossian
+                    vc.rautaharjuQRS = self.rautaharjuQRS
+                    vc.wang = self.wang
+                    vc.qtc = self.qtc
+                }
                 
                 controller.modalPresentationStyle = .fullScreen
                 present(controller, animated: true, completion: nil)
