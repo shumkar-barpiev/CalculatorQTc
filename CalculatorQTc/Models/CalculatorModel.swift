@@ -11,6 +11,6 @@ import UIKit
 class CalculatorModel{
     var calculationResult: Double = 0.0
     var calculationStatus: String = ""
-    var calculationStatusColor: UIColor = UIColor.white
+    var calculationStatusColor: UIColor = UIColor.clear
     var calculationStatusTextColor: UIColor = UIColor.black
 }
